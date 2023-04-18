@@ -121,11 +121,11 @@ animation-fill-mode: forwards;
 } 
 
 .menu {
-	top: 5vh;
-	position: fixed;
-	padding-top: 0px;
-	width: 100vw;
-	height: 80vw;
+top: 5vh;
+position: fixed;
+padding-top: 0px;
+width: 100vw;
+height: 80vw;
 } 
 
 #tools1, #tools2 {
@@ -140,25 +140,26 @@ transform: translate(-50%, 0);
 } 
 
 #tools1 {
-top: 15vh;
+top: 25vh;
 } 
 
 #tools2 {
-top: 50vh;
+top: 60vh;
 } 
 
 #gh {
-width: 15vw;
-hight: 15vw;
+width: 12vw;
+hight: 12vw;
 transform: translate(0%,-10%);
 } 
 
 .btn {
 color: #A3A3A3 ;
-margin: 5vw;
-width: 12vw;
-height: 12vw; 
-font-size: 7vw;
+padding: 0;
+margin: 2vw;
+width: 10vw;
+height: 8vw; 
+font-size: 8vw;
 transition-duration: 0.4s;
 }
 
