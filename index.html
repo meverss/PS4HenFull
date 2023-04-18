@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex, noarchive">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PS4 Jailbreak Host by MeVeRsS</title>
+<link rel="shortcut icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" href="AurulentSansMono.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="Zrnic.woff" as="font" type="font/woff" crossorigin>
+<script src="int64.js"></script>
+<script src="rop.js"></script>
+<script src="kexploit.js"></script>
+<script src="webkit.js"></script>
+</head>
+<body onload="setTimeout(poc, 5000); anim_page();"  >
+<script>
+if (window.applicationCache.status=='0'){window.location.replace("cache.html"); }
+</script>
+<h1 id=title >PS4 Jailbreak Host by MeVeRsS</h1>
+<div id=msg >  Aplicando el Jailbreak...</div> 
+<div id=menu class=menu>
+    <div id=tools1 >
+	<div id=goldhen class=btn ><img id=gh src="goldhen.png"></div>
+	<div id=orbis class=btn> </div>
+	<div id=fan class=btn>󰈐 </div>
+    </div>
+    <div id=tools2 >
+	<div id=db class=btn>󰥞 </div>
+	<div id=updates class=btn>󱣲 </div>
+	<div id=linux class=btn> </div>
+    </div>
+</div>
+<img  id="logo" src="logo.png" class="logo" > 
+<div id=info class=contact>                                            
+    <div id=i_whatsapp style="color: lightgreen"> (+53)58205225 </div>
+    <div id=i_email style="color: salmon"> meverss@my.com </div>
+    <div id=i_facebook style="color: lightblue"> @liontech85 </div>
+</div>
+<div id=credits class=credits >Créditos a: SiSTRo, Al Azif, ChendoChap, Specter, Znullptr, Theflow0, Leeful, Sleirsgoevy y muchos más </div>
+<script>
+function done() {
+	msg.innerHTML = " Jailbreak aplicado y listo";
+	logo.style="opacity:1; animation-fill-mode:forwards; transform: scale(3,3) translate(-16%, 60%)";
+	logo.classList.add('logofading');
+}  
+
+function anim_page(){
+/*    document.body.style.animation="backgroundzoom";*/
+/*    i_whatsapp.classList.toggle('zooming');
+    i_email.classList.toggle('zooming');
+    i_facebook.classList.toggle('zooming');*/
+}
+
+function allset(){
+    msg.innerHTML = " GoldHEN cargado";
+}
+
+function load_poc(){
+ var req = new XMLHttpRequest();
+ req.responseType = "arraybuffer";
+ req.open('GET', PLFile);
+ req.send();
+ req.onreadystatechange = function () {
+  if (req.readyState == 4) {
+   PLD = req.response;
+   var payload_buffer = chain.syscall(477, 0, PLD.byteLength*4 , 7, 0x1002, -1, 0);
+   var pl = p.array_from_address(payload_buffer, PLD.byteLength*4);
+   var padding = new Uint8Array(4 - (req.response.byteLength % 4) % 4);
+   var tmp = new Uint8Array(req.response.byteLength + padding.byteLength);
+   tmp.set(new Uint8Array(req.response), 0);
+   tmp.set(padding, req.response.byteLength);
+   var shellcode = new Uint32Array(tmp.buffer);
+   pl.set(shellcode,0);
+   var pthread = p.malloc(0x10);
+   chain.call(libKernelBase.add32(OFFSET_lk_pthread_create), pthread, 0x0, payload_buffer, 0);
+   allset();
+  }
+ };
+}
+
+function goldhen(){
+LoadedMSG = "GoldHEN cargado";
+PLFile = "goldhen_v2.4b5.bin";
+load_poc();
+}
+
+function noupdates(){
+PLFile = "disable-updates.bin";
+load_poc();
+}
+
+function orbistb(){
+PLFile = "Orbis-Toolbox-900.bin";
+load_poc();
+}
+
+function fan60(){
+PLFile = "fan60.bin";
+load_poc();
+}
+</script>
+</body>
+</html>
