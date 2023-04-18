@@ -102,7 +102,7 @@ transform: translate(-50%, 0);
 width: 100%;
 font-family: 'Zrnic';
 font-size: 5vw;
-color: #999;
+color: #eee;
 margin-top: 15px;
 animation: textshow 0.5s ease 0.3s;
 animation-fill-mode: forwards;
