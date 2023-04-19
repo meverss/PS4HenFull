@@ -4,14 +4,14 @@
 
 @font-face {
  font-family: 'Zrnic';
- src: url('Zrnic.woff') format('woff');
+ src: url('zrnic.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
  font-family: 'AurulentSansMono';
- src: url('AurulentSansMono.woff') format('woff'); 
+ src: url('aurulentsm.woff') format('woff'); 
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -192,26 +192,26 @@ text-shadow: 0px 0px 2px blue;
 }
 
 @keyframes marquee {
-	0% {opacity: 0; }
-	15% {opacity: 1; } 
-	100% {transform: translateX(-2300px); }
+    0% {opacity: 0; }
+    15% {opacity: 1; } 
+    100% {transform: translateX(-2300px); }
 
 }
 
 @keyframes texthighlight {
-	  50% {font-size: 2vw;}
-	100% {font-size: 1.6vw;}
+      50% {font-size: 2vw;}
+    100% {font-size: 1.6vw;}
 
 }
 @keyframes backgroundzoom {
-	 50% {background-size: 160vh;}
-	100% {background-size: 145vh;}
+     50% {background-size: 160vh;}
+    100% {background-size: 145vh;}
 }
 @keyframes logofadeout {
-	0%{ opacity :1; }
+    0%{ opacity :1; }
     100% { opacity: 0; } 
 } 
 @keyframes zoom {
-	0%{opacity:0;}
-	100% {opacity: 1; transform: scale(3,3) translate(-16%, 60%);} 
+    0%{opacity:0;}
+    100% {opacity: 1; transform: scale(3,3) translate(-16%, 60%);} 
 }
