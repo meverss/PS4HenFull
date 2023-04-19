@@ -11,16 +11,14 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preload" href="aurulentsm.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="zrnic.woff" as="font" type="font/woff" crossorigin>
-<!--<script src="int64.js"></script>
+<script src="int64.js"></script>
 <script src="rop.js"></script>
 <script src="kexploit.js"></script>
-<script src="webkit.js"></script>-->
+<script src="webkit.js"></script>
 </head>
-<!--<body onload="setTimeout(poc, 5000); anim_page();">-->
-<body">
+<body onload="setTimeout(poc, 5000); anim_page();">
 <script>
-setTimeout(function(){done();},10000)
-<!--if (window.applicationCache.status=='0'){window.location.replace("cache.html"); }-->
+if (window.applicationCache.status=='0'){window.location.replace("cache.html"); }
 </script>
 <h1 id=title >PS4 Jailbreak Host by MeVeRsS</h1>
 <div id=msg >Aplicando el Jailbreak...</div> 
@@ -46,19 +44,12 @@ setTimeout(function(){done();},10000)
 <script>
 function done() {
 	msg.innerHTML = " Jailbreak aplicado y listo";
-	logo.style="opacity:1; animation-fill-mode:forwards; transform: scale(3,3) translate(-16%, 60%)";
-	logo.classList.add('logofading');
+	logo.style="opacity:1; animation: logofadeout 0.3s linear 1s; animation-fill-mode:forwards";
+	menu.style="visibility: visible; animation: textshow 0.3s linear 1.5s; animation-fill-mode:forwards";
 }  
 
-function anim_page(){
-/*    document.body.style.animation="backgroundzoom";*/
-/*    i_whatsapp.classList.toggle('zooming');
-    i_email.classList.toggle('zooming');
-    i_facebook.classList.toggle('zooming');*/
-}
-
 function allset(){
-    msg.innerHTML = " GoldHEN cargado";
+    msg.innerHTML = LoadedMSG;
 }
 
 function load_poc(){
@@ -85,25 +76,77 @@ function load_poc(){
 }
 
 function goldhen(){
-LoadedMSG = "GoldHEN cargado";
+LoadedMSG = " GoldHEN cargado";
 PLFile = "goldhen_v2.4b5.bin";
 load_poc();
 }
 
-function noupdates(){
+function dupdates(){
+LoadedMSG = " Desactivadas las actualizaciones del Sistema";
 PLFile = "disable-updates.bin";
 load_poc();
 }
 
+function eupdates(){
+LoadedMSG = " Activadas las actualizaciones del Sistema";
+PLFile = "enable-updates.bin";
+load_poc();
+}
+
 function orbistb(){
-PLFile = "Orbis-Toolbox-900.bin";
+LoadedMSG = " Habilitado Orbis Toolbox";
+PLFile = "orbistb900.bin";
+load_poc();
+}
+
+function fan40(){
+LoadedMSG = " Temperatura ajustada a 40";
+PLFile = "fan40.bin";
+load_poc();
+}
+
+function fan45(){
+LoadedMSG = " Temperatura ajustada a 45";
+PLFile = "fan45.bin";
+load_poc();
+}
+
+function fan50(){
+LoadedMSG = " Temperatura ajustada a 50";
+PLFile = "fan50.bin";
+load_poc();
+}
+
+function fan55(){
+LoadedMSG = " Temperatura ajustada a 55";
+PLFile = "fan55.bin";
 load_poc();
 }
 
 function fan60(){
+LoadedMSG = " Temperatura ajustada a 60";
 PLFile = "fan60.bin";
 load_poc();
 }
+
+function fan65(){
+LoadedMSG = " Temperatura ajustada a 65";
+PLFile = "fan65.bin";
+load_poc();
+}
+
+function fan70(){
+LoadedMSG = " Temperatura ajustada a 70";
+PLFile = "fan70.bin";
+load_poc();
+}
+
+function fan75(){
+LoadedMSG = " Temperatura ajustada a 75";
+PLFile = "fan75.bin";
+load_poc();
+}
+
 </script>
 </body>
 </html>
