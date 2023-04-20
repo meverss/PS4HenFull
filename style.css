@@ -63,7 +63,7 @@ width: 100%;
 font-family: 'Zrnic';
 font-size: 5vw;
 color: #eee;
-margin-top: 15px;
+margin-top: 20px;
 animation: textshow 0.5s ease 0.3s;
 animation-fill-mode: forwards;
 } 
@@ -81,6 +81,7 @@ animation-fill-mode: forwards;
 } 
 
 .menu {
+z-index: 1000;
 visibility: hidden;
 opacity: 0;
 top: 5vh;
