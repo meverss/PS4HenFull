@@ -193,23 +193,21 @@ box-shadow: 3px 0 #555, 0 3px #555, 3px 3px #555, -3px 0 #555, 3px -3px #555, 0 
 
 #bub_db {
 font-size: 4.5vh; 
-margin-left: 8vw;
 width: 32vw;
-top: 36vh;
+margin-left: -40px;
 } 
 
 #bub_upd {
 font-size: 4.5vh; 
-margin-left: 36vw;
 width: 32vw;
-top: 26vh;
+margin-left: -40px;
 } 
 
 #bub_lin {
-font-size: 4vh; 
-margin-left: 37vw;
-width: 60vw;
-top: 16vh;
+font-size: 2.5vh; 
+width: 64vw;
+padding-top: 5px;
+margin-left: -170px;
 } 
 
 .bub_btn {
@@ -217,10 +215,6 @@ padding-top: 6px;
 width: 12vw;
 padding-right: 10px;
 text-shadow: 2px 2px 2px #111;
-} 
-
-.btn:hover,  .bub_btn:hover {
-cursor: pointer;
 } 
 
 #info, #credits{
@@ -258,6 +252,16 @@ position: fixed;
 left: 50%;
 transform: translate(-50%, 0);
 } 
+
+/*Hover*/
+#db:hover #bub_db , #updates:hover #bub_upd, #linux:hover #bub_lin {
+visibility: visible;
+} 
+
+.btn:hover,  .bub_btn:hover {
+cursor: pointer;
+}  
+
 } 
 
 /*========================*/
