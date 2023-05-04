@@ -11,29 +11,26 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preload" href="aurulentsm.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="zrnic.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="lcddot.ttf" as="font" type="font/truetype" crossorigin>
 <script src="int64.js"></script>
 <script src="rop.js"></script>
 <script src="kexploit.js"></script>
 <script src="webkit.js"></script>
 </head>
-<!-- <body onload="setTimeout(poc, 5000); ">-->
-<body onload="done()" oncl8ck="hide_bubble()" >
-<script>
-if (window.applicationCache.status=='0'){window.location.replace("cache.html"); }
-</script>
+<body onload=checkmobile() >
 <h1 id=title class=title >PS4 Jailbreak Host by MeVeRsS</h1>
 <hr>
 <div id=msg >Aplicando el Jailbreak...</div> 
 <div id=menu class=menu>
     <div id=tools1 >
 	<div id=goldhen class=btn onmouseover="msg.innerHTML='GoldHEN v2.4b5'" onmouseout="msg.innerHTML='Payloads'" onclick=goldhen()><img id=gh src="goldhen.png"></div>
-	<div id=orbis class=btn onmouseover="msg.innerHTML='Orbis Toolbox'" onmouseout="msg.innerHTML='Payloads'" onclick=orbistb()></div>
+	<div id=orbis class=btn onmouseover="msg.innerHTML='Orbis Toolbox'" onmouseout="msg.innerHTML='Payloads'" onclick=orbistb()></div>
 	<div id=fan class=btn onmouseover="msg.innerHTML='Control de Temperatura'" onmouseout="msg.innerHTML='Payloads'" onclick=fan()></div><select id="f_temp" class=lst_temp></select><span class=celcius></span>
     </div>
     <div id=tools2 >
-	<div id=db class="db btn" onmouseover="msg.innerHTML='Exportar/Importar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" ></div>
-	<div id=updates class="updates btn" onmouseover="msg.innerHTML='Activar/Desactivar ctualización automática del Sistema'" onmouseout="msg.innerHTML='Payloads'" ></div>
-	<div id=linux class="linux btn" onmouseover="msg.innerHTML='Linux'" onmouseout="msg.innerHTML='Payloads'" ></div>
+	<div id=db class="btn" onmouseover="msg.innerHTML='Exportar/Importar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=db_show() ></div>
+	<div id=updates class="btn" onmouseover="msg.innerHTML='Activar/Desactivar ctualización automática del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=upd_show() ></div>
+	<div id=linux class="btn" onmouseover="msg.innerHTML='Linux'" onmouseout="msg.innerHTML='Payloads'" onclick=lin_show() ></div>
     </div>
 </div>
 <img  id="logo" src="logo.png" class="logo" > 
@@ -42,12 +39,36 @@ if (window.applicationCache.status=='0'){window.location.replace("cache.html"); 
     <div id=i_email style="color: salmon"> meverss@my.com </div>
     <div id=i_facebook style="color: lightblue"> @liontech85 </div>
 </div>
-<div class=bubble1>
-	<div id=exp_db class=bub_btn onmouseover="msg.innerHTML='Exportar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=exp_db()></div>
-	<div id=imp_db class=bub_btn onmouseover="msg.innerHTML='Importar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=imp_db()></div>
+<div class=box>
+<div id=bub_db>
+	<div id=exp_db class=bub_btn onmouseover="msg.innerHTML='Exportar Base de Datos'" onmouseout="msg.innerHTML='Payloads'" onclick=exp_db()>󰆓</div>
+	<div id=imp_db class=bub_btn onmouseover="msg.innerHTML='Importar Base de Datos'" onmouseout="msg.innerHTML='Payloads'" onclick=imp_db()>󰉍</div>
 </div>
-<div id=credits class=credits >Créditos a: SiSTRo, Al Azif, ChendoChap, Specter, Znullptr, Theflow0, Leeful, Sleirsgoevy y muchos más </div>
+<div id=bub_upd>
+	<div id=ena_upd class=bub_btn onmouseover="msg.innerHTML='Activar Actualizaciones del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=act_upd()>󰮏</div>
+	<div id=dis_upd class=bub_btn onmouseover="msg.innerHTML='Desactivar Actualizaciones del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=des_upd()>󱌡</div>
+</div>
+<div id=bub_lin>
+	<div id=lin_1gb class=bub_btn onmouseover="msg.innerHTML='Exportar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=lin_1GB()></div>
+	<div id=lin_2gb class=bub_btn onmouseover="msg.innerHTML='Importar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=lin_2GB()></div>
+    <div id=lin_3gb class=bub_btn onmouseover="msg.innerHTML='Exportar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=lin_3GB()></div>
+	<div id=lin_4gb class=bub_btn onmouseover="msg.innerHTML='Importar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=lin_4GB()></div>
+    <div id=lin_5gb class=bub_btn onmouseover="msg.innerHTML='Importar Base de Datos del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=lin_5GB()></div>
+</div>
+</div>
+<div id=credits class=credits >Créditos a: SiSTRo, Al Azif, ChendoChap, Specter, Znullptr, Theflow0, Leeful, Sleirsgoevy y muchos más  </div>
 <script>
+function checkmobile() {
+var width = window.innerWidth
+if (width <= 450){ 
+setTimeout(done, 5500);
+msg.innerHTML = "Versión Mobil <br>(Solo de muestra. Host diseñado para PS4) ";
+} else {
+	setTimeout(poc, 5000); 
+	if (window.applicationCache.status=='0'){window.location.replace("cache.html"); }  
+} 
+} 
+
 for(var i=40; i<=75; i=i+5){
     var select = document.getElementById("f_temp");
     var option = document.createElement("OPTION");
@@ -59,8 +80,8 @@ f_temp.value=60;
 
 function done() {
 	msg.innerHTML = " Jailbreak aplicado y listo";
-	logo.style="opacity:1; animation: logofadeout 0.3s linear 1s; animation-fill-mode:forwards";
-	menu.style="visibility: visible; animation: textshow 0.3s linear 1.5s; animation-fill-mode:forwards";
+	logo.style="opacity: .4; animation: logofadeout .3s linear 1s; animation-fill-mode:forwards";
+	menu.style="visibility: visible; animation: textshow .3s linear 1.5s; animation-fill-mode:forwards";
 }  
 
 function allset(){
@@ -120,13 +141,53 @@ PLFile = "fan"+f_temp.value+".bin";
 load_poc();
 }
 
-function exp_db() {
-alert(bubble.style);
+function db_show() {
+bub_db.style="visibility: visible; animation: show .4s linear";
+bub_upd.style="visibility: hidden";
+bub_lin.style="visibility: hidden";
 } 
+
+function upd_show() {
+bub_upd.style="visibility: visible; animation: show .4s linear";
+bub_db.style="visibility: hidden";
+bub_lin.style="visibility: hidden";
+} 
+
+function lin_show() {
+bub_lin.style="visibility: visible; animation: show .4s linear";
+bub_db.style="visibility: hidden";
+bub_upd.style="visibility: hidden";
+} 
+
 function exp_db() {
 alert(bubble.style);
 } 
 
+function exp_db() {
+alert(bubble.style);
+} 
+
+bub_db.addEventListener( "mouseout", (event) => {
+bub_db.style="visibility: hidden";
+}) ;
+
+bub_upd.addEventListener( "mouseout", (event) => {
+bub_upd.style="visibility: hidden";
+} );
+
+bub_lin.addEventListener( "mouseout", (event) => {
+bub_lin.style="visibility: hidden";
+} );
+
+/*const bub_enabled= ["db", "upd", "lin"] ;
+for(var i=0; i<bub_enabled.length; i=i+1){
+var bubble=document.querySelector("#bub_"+bub_enabled[i]); 
+bubble.addEventListener( "mouseover", (event) => {
+bubble.style="visibility: hidden; color:red" ;
+} );
+}*/
+
+/*alert(window.innerWidth);*/
 </script>
 </body>
 </html>

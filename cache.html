@@ -18,7 +18,8 @@ function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));setTimeout
 function DisplayCacheProgress(){setTimeout(function(){window.msg.innerHTML="Cache instalada satisfactoriamente ✔";},1500);setTimeout(function(){window.msg.innerHTML="Ahora cierre y vuelva a abrir el navegador";},3500);  }
 window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script>
-<h1 id=title >PS4 Jailbreak Host by MeVeRsS</h1>
+<h1 id=title class=title>PS4 Jailbreak Host by MeVeRsS</h1>
+<hr>
 <img src="logo.png" class="logo">
 <h1 id=msg >Espere...</h1>
 <div id=info class=contact>                                            
@@ -26,6 +27,6 @@ window.applicationCache.addEventListener("progress",DLProgress,false);window.app
     <div id=i_email style="color: salmon">  meverss@my.com </div>
     <div id=i_facebook style="color: lightblue">  @liontech85 </div>
 </div>
-<div id=credits class=credits >Créditos a: SiSTRo, Al Azif, ChendoChap, Specter, Znullptr, Theflow0, Leeful, Sleirsgoevy y muchos más </div>
+<div id=credits class=credits >Créditos a: SiSTRo, Al Azif, ChendoChap, Specter, Znullptr, Theflow0, Leeful, Sleirsgoevy y muchos más  </div>
 </body>
 </html>
