@@ -18,7 +18,7 @@
 }
 @font-face {
  font-family: 'LCDDot';
- src: url('lcddot.ttf') format('truetype');
+ src: url('lcddot.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -30,7 +30,7 @@
 
 body, html {
 opacity: 0;
-background-image: url('img_m.png');
+background-image: url('img_m.jpg');
 background-size: 100%;
 text-align: center;
 color: white;
@@ -144,7 +144,7 @@ cursor: pointer;
 
 }
 
-#fan, .lst_temp, .celcius, .bub_btn {
+#fan, .lcd_temp, .celcius, .bub_btn {
 opacity: .7;
 } 
 
@@ -152,8 +152,9 @@ opacity: .7;
 display: flex;
 } 
 
-.lst_temp {
+.lcd_temp {
 font-family: 'LCDDot';
+font-size: 5.5vw;
 height: 7vw;
 margin-top: 17px;
 margin-left: -30px;
@@ -271,7 +272,7 @@ cursor: pointer;
 
 body, html {
 opacity: 0;
-background-image: url('img.png');
+background-image: url('img.jpg');
 background-size: 100%;
 text-align: center;
 color: white;
@@ -386,7 +387,7 @@ cursor: pointer;
 
 }
 
-#fan, .lst_temp, .celcius, .bub_btn {
+#fan, .lcd_temp, .celcius, .bub_btn {
 opacity: .7;
 } 
 
@@ -394,8 +395,9 @@ opacity: .7;
 display: flex;
 } 
 
-.lst_temp {
+.lcd_temp {
 font-family: 'LCDDot';
+font-size: 1.2vw;
 height: 7vw;
 margin-top: 17px;
 margin-left: -30px;
