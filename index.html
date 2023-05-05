@@ -18,7 +18,7 @@
 <script src="kexploit.js"></script>
 <script src="webkit.js"></script>
 </head>
-<body onload=checkmobile() onclick=hide_bubbles() >
+<body onload=checkmobile() >
 <div id=loading style="font-family: 'Zrnic'; font-size: 8vw">Cargando... </div>
 <div id="bigblock"  style="display: none" >
 <h1 id=title class=title >PS4 Jailbreak Host by MeVeRsS</h1>
@@ -26,7 +26,7 @@
 <div id=msg >Aplicando el Jailbreak...</div> 
 <div id=menu class=menu>
     <div id=tools1 >
-	    <div id=goldhen class=btn onmouseover="msg.innerHTML='GoldHEN v2.4b5'" onmouseout="msg.innerHTML='Payloads'" onclick=goldhen()><img id=gh src="goldhen.png"></div>
+	    <div id=goldhen class=btn onmouseover="msg.innerHTML='GoldHEN v2.4b5'" onmouseout="msg.innerHTML='Payloads'" onclick=goldhen()><img id=gh src="goldhen.png"  ></div>
 	    <div id=orbis class=btn onmouseover="msg.innerHTML='Orbis Toolbox'" onmouseout="msg.innerHTML='Payloads'" onclick=orbistb()></div>
 	    <div id=fan class=btn onmouseover="msg.innerHTML='Control de Temperatura'" onmouseout="msg.innerHTML='Payloads'" onclick=fan()></div><select id="f_temp" class=lcd_temp></select><span class=celcius></span>
     </div>
@@ -69,14 +69,14 @@ $(document).ready(function() {
 });
 
 function checkmobile() {
-var width = window.innerWidth
-if (width <= 450){ 
+/*var width = window.innerWidth
+if (width <= 450){ */
 setTimeout(done, 1500);
-msg.innerHTML = "Versión Mobil <br>(Solo de muestra. Host diseñado para PS4) ";
+/*msg.innerHTML = "Versión Mobil <br>(Solo de muestra. Host diseñado para PS4) ";
 } else {
 	setTimeout(poc, 5000); 
 	if (window.applicationCache.status=='0'){window.location.replace("cache.html"); }  
-} 
+} */
 } 
 
 for(var i=40; i<=75; i=i+5){
