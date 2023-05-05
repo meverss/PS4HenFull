@@ -12,12 +12,15 @@
 <link rel="preload" href="aurulentsm.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="zrnic.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="lcddot.woff" as="font" type="font/woff" crossorigin>
+<script src="jquery-3.6.4.min.js"></script>
 <script src="int64.js"></script>
 <script src="rop.js"></script>
 <script src="kexploit.js"></script>
 <script src="webkit.js"></script>
 </head>
 <body onload=checkmobile() onclick=hide_bubbles() >
+<div id=loading>Cargando... </div>
+<div id="bigblock"  style="display: none" >
 <h1 id=title class=title >PS4 Jailbreak Host by MeVeRsS</h1>
 <hr>
 <div id=msg >Aplicando el Jailbreak...</div> 
@@ -58,7 +61,13 @@
     <div id=i_facebook style="color: lightblue"> @liontech85 </div>
 </div>
 <div id=credits class=credits >Créditos a: SiSTRo, Al Azif, ChendoChap, Specter, Znullptr, Theflow0, Leeful, Sleirsgoevy y muchos más  </div>
+</div>
 <script>
+$(document).ready(function() {
+    $('#bigblock').show();
+    $('#loading').hide();
+});
+
 function checkmobile() {
 var width = window.innerWidth
 if (width <= 450){ 
