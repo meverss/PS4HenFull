@@ -39,8 +39,8 @@
      </div>
     <div id=updates class="btn" onmouseover="msg.innerHTML='Activar/Desactivar ctualización automática del Sistema'" onmouseout="msg.innerHTML='Payloads'" >
 	    <div id=bub_upd>
-	        <div id=ena_upd class="bub_btn" onmouseover="msg.innerHTML='Activar Actualizaciones del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=act_upd()>󰮏</div>
-	        <div id=dis_upd class="bub_btn" onmouseover="msg.innerHTML='Desactivar Actualizaciones del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=des_upd()>󱌡</div>
+	        <div id=ena_upd class="bub_btn" onmouseover="msg.innerHTML='Activar Actualizaciones del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=updates()>󰮏</div>
+	        <div id=dis_upd class="bub_btn" onmouseover="msg.innerHTML='Desactivar Actualizaciones del Sistema'" onmouseout="msg.innerHTML='Payloads'" onclick=dupdates()>󱌡</div>
         </div>
     </div>
     <div id=linux class="btn" onmouseover="msg.innerHTML='Linux'" onmouseout="msg.innerHTML='Payloads'" >
@@ -127,37 +127,101 @@ PLFile = "goldhen_v2.4b5.bin";
 load_poc();
 }
 
-function dupdates(){
-LoadedMSG = " Desactivadas las actualizaciones del Sistema";
-PLFile = "disable-updates.bin";
-load_poc();
-}
-
-function eupdates(){
-LoadedMSG = " Activadas las actualizaciones del Sistema";
-PLFile = "enable-updates.bin";
-load_poc();
-}
-
 function orbistb(){
 LoadedMSG = " Habilitado Orbis Toolbox";
 PLFile = "orbistb900.bin";
 load_poc();
-}
+} 
 
 function fan(){
 LoadedMSG = " Temperatura ajustada a " +f_temp.value+"";
 PLFile = "fan"+f_temp.value+".bin";
 load_poc();
+} 
+
+function exp_db(){
+LoadedMSG = " Base de Datos del Sistema exportada";
+PLfile = "db_backup.bin";
+load_poc();
 }
 
-function exp_db() {
-alert("Exportar" );
-} 
+function imp_db(){
+LoadedMSG = "D Base de Datos del Sistema importada";
+PLfile = "db_restore.bin";
+load_poc();
+}
 
-function imp_db() {
-alert("Importar");
-} 
+function dupdates(){
+LoadedMSG = " Desactivadas las Actualizaciones del Sistema";
+PLFile = "disable-updates.bin";
+load_poc();
+}
+
+function eupdates(){
+LoadedMSG = " Activadas las Actualizaciones del Sistema";
+PLFile = "enable-updates.bin";
+load_poc();
+}
+
+function lin_1GB(){
+msgs.innerHTML=" Cargador de Linux (1GB) lanzado";
+eval.call(window, loadScript('netcat.js')
++loadScript('malloc.js')
++loadScript('rop2.js')
++loadScript('syscalls.js')
++loadScript('syscalls2.js')
++loadScript('linux1gb.js')
++loadScript('mira.js')
++loadScript('relocator.js'));
+}
+
+function lin_2GB(){
+msgs.innerHTML=" Cargador de Linux (2GB) lanzado";
+eval.call(window, loadScript('netcat.js')
++loadScript('malloc.js')
++loadScript('rop2.js')
++loadScript('syscalls.js')
++loadScript('syscalls2.js')
++loadScript('linux2gb.js')
++loadScript('mira.js')
++loadScript('relocator.js'));
+}
+
+function lin_3GB(){
+msgs.innerHTML=" Cargador de Linux (3GB) lanzado";
+eval.call(window, loadScript('netcat.js')
++loadScript('malloc.js')
++loadScript('rop2.js')
++loadScript('syscalls.js')
++loadScript('syscalls2.js')
++loadScript('linux3gb.js')
++loadScript('mira.js')
++loadScript('relocator.js'));
+}
+
+function lin_4GB(){
+msgs.innerHTML=" Cargador de Linux (4GB) lanzado";
+eval.call(window, loadScript('netcat.js')
++loadScript('malloc.js')
++loadScript('rop2.js')
++loadScript('syscalls.js')
++loadScript('syscalls2.js')
++loadScript('linux4gb.js')
++loadScript('mira.js')
++loadScript('relocator.js'));
+}
+
+function lin_5GB(){
+msgs.innerHTML=" Cargador de Linux (5GB) lanzado";
+eval.call(window, loadScript('netcat.js')
++loadScript('malloc.js')
++loadScript('rop2.js')
++loadScript('syscalls.js')
++loadScript('syscalls2.js')
++loadScript('linux5gb.js')
++loadScript('mira.js')
++loadScript('relocator.js'));
+}
 
 </script>
 </body>
