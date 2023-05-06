@@ -102,7 +102,6 @@ animation-fill-mode: forwards;
 } 
 
 #tools1, #tools2 {
-	background-color: green;
 display: flex;
 justify-content: center;
 align: center;
